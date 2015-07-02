@@ -21,7 +21,4 @@ def secure_token
 	end
 end
 
-
-
-
 Fragment::Application.config.secret_key_base = 'c45afdf62c6f76698d449fad6d821b2cde69fa1f0f653de012018b6611f92db57a1bae58067c2f4a2245b4ee33b689caf4d58b6e0b7146bf8a7567ae6ce55436'
