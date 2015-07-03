@@ -40,6 +40,16 @@ describe 'static_pages' do
 		end
 	end
 
+	describe 'Sign in page' do
+		it "should have the content'Fragment'" do
+			visit signin_path
+			expect(page).to have_content('Fragment')
+		end
+		it "should have the title 'Signin'" do
+			visit signin_path
+			expect(page).to have_title('Signin')
+		end
+	end
 end
 
 
