@@ -2,53 +2,33 @@ require 'spec_helper'
 
 
 describe 'static_pages' do
-
 	describe 'Home page' do
-		it "should have the content 'Fragment'" do
-			visit root_path
-			expect(page).to have_content ('Fragment')
-		end
-		it "should have the title 'Home'" do
-			visit root_path
-				expect(page).to have_title('Fragment')
-		end
-		it "should not have the title" do
-			visit root_path
-			expect(page).not_to have_title('|')
-		end
-  end
+		before  {visit root_path}
+		subject {page}
+		it {should have_content('Fragment')}
+		it {should have_title('Fragment')}
+		it {should_not have_title('|')}
+	end
 
 	describe 'About Page' do
-		it "should have the content 'Fragment'" do
-			visit about_path
-			expect(page).to have_content('Fragment')
-		end
-		it "should have the title 'About'" do
-			visit about_path
-			expect(page).to have_title('Fragment | About')
-		end
+		before {visit about_path}
+		subject {page}
+		it {should have_content('Fragment')}
+		it {should have_title('Fragment | About')}
 	end
 
 	describe 'Help Page' do
-		it "should have the content 'Fragment'" do
-			visit help_path
-			expect(page).to have_content('Fragment')
-		end
-		it "should have the title 'Help'" do
-			visit help_path
-			expect(page).to have_title('Fragment | Help')
-		end
+		before {visit help_path}
+		subject {page}
+		it {should have_content('Fragment')}
+		it {should have_title('Fragment | Help')}
 	end
 
 	describe 'Sign in page' do
-		it "should have the content'Fragment'" do
-			visit signin_path
-			expect(page).to have_content('Fragment')
-		end
-		it "should have the title 'Signin'" do
-			visit signin_path
-			expect(page).to have_title('Signin')
-		end
+		before {visit signin_path}
+		subject {page}
+		it {should have_content('Fragment')}
+		it {should have_title('Signin')}
 	end
 end
 
