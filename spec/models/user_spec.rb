@@ -8,9 +8,12 @@ describe User do
   subject {@user}
   it {should respond_to(:name)}
   it {should respond_to(:email)}
+
   it {should respond_to(:password_digest)}
+
   it {should respond_to(:password)}
   it {should respond_to(:password_confirmation)}
+  it {should respond_to(:authenticate)}
 
 
   it {should be_valid}
@@ -62,7 +65,7 @@ describe User do
   	  end
     end
   end
-
+  #####password test#####
   describe "when password is blank" do
   	before do
   	  @user = User.new(name: "Example User", email: "foobar@gmail.com",
@@ -76,12 +79,26 @@ describe User do
   	it {should_not be_valid}
   end
 
+
+  describe "when password is to short" do
+  	before {@user.password = @user.password_confirmation =  "a" * 5}
+  	it {should be_invalid}
+  end
+
+  describe "when password is too long" do
+  	before {@user.password = @user.password_confirmation = "a" * 21}
+  	it {should be_invalid}
+  end
+  
+
+
+
   describe "return value of authenticate method" do
   	before {@user.save}
   	let(:found_user) {User.find_by(email: @user.email)}
 
   	describe "with valid password" do 
-  		it {should eq found_user.authenticate(@user.password)}
+  		it {should eq found_user.authenticate(@user.password)} #authenticateの戻り値はuserデータ
   	end
 
   	describe "with invalid password" do 
@@ -91,6 +108,6 @@ describe User do
   		specify {expect(user_for_invalid_password).to be_false}
   	end
   end
-  
+
 end
 
