@@ -1,8 +1,11 @@
 @import "bootstrap";
+@import url("http://fonts.googleapis.com/css?family=Chango");
+
 
 html {
   overflow-y: scroll;
 }
+
 
 body {
   padding-top: 100px;
@@ -160,3 +163,7 @@ input {
   @extend .control-group;
   @extend .error;
 }
+
+
+
+

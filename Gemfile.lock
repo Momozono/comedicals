@@ -51,6 +51,8 @@ GEM
     execjs (2.5.2)
     ffi (1.9.10)
     formatador (0.2.5)
+    google-webfonts-rails (0.0.4)
+      activesupport (> 3.2.0, < 5.0)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -177,6 +179,7 @@ DEPENDENCIES
   bootstrap-sass (= 2.3.2.0)
   capybara (= 2.1.0)
   coffee-rails (= 4.0.1)
+  google-webfonts-rails
   guard (= 2.6.1)
   guard-rspec (= 2.5.0)
   jbuilder (= 1.0.2)
