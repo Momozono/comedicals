@@ -1,6 +1,5 @@
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Chango);
-
+@import url('//fonts.googleapis.com/css?family=Chango:400,700,300');
 
 html {
   overflow-y: scroll;
@@ -9,8 +8,7 @@ html {
 
 body {
   padding-top: 100px;
-    font-family: 'Chango', cursive;
-
+  font-family: 'Chango', cursive;
 }
 
 .center {
@@ -33,20 +31,20 @@ h1 {
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
-  font-family: 'Nunito', sans-serif;
+  /*font-family: 'Nunito', sans-serif;*/
 
 }
 
 p { 
 	font-size: 1.5em;
 	text-align: center;
-	font-family: 'Nunito', sans-serif;
+	/*font-family: 'Nunito', sans-serif;*/
 
 }
 
 /* header */
 li {
-	font-family: 'Nunito', sans-serif;
+	/*font-family: 'Nunito', sans-serif;*/
 	font-size: 1.2em;
 	color: #00cc66;
 }
