@@ -1,4 +1,4 @@
-module ApplicationHelper #namespace
+module ApplicationHelper
 	def generate_title(subtitle)
 		main_title = "Fragment"
 		if subtitle.empty?

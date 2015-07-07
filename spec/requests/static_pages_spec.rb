@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe 'static_pages' do
 	describe 'Home page' do
 		before  {visit root_path}
@@ -28,7 +27,7 @@ describe 'static_pages' do
 		before {visit signin_path}
 		subject {page}
 		it {should have_content('Fragment')}
-		it {should have_title('Signin')}
+		it {should have_title('Sign in')}
 	end
 end
 

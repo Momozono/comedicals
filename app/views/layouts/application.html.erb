@@ -4,7 +4,7 @@
   <title><%= generate_title(yield(:title)) %></title>
   <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  
+
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <!--[if lt IE 9]>
@@ -16,6 +16,10 @@
 	<%= render 'layouts/header' %>
 
   <div class="container">
+  	<% flash.each do |key, value| %>
+  	  <div class="alert alert-<%= key %>"><%= value %></div>
+  	<% end %>
+
     <%= yield %>
   </div>
   
