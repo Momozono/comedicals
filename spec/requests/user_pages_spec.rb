@@ -21,12 +21,16 @@ describe "User Pages" do
 
   describe "edit page" do
     let(:user){FactoryGirl.create(:user)}
-    before {visit edit_user_path(user)}
+    before do
+    	sign_in user
+      visit edit_user_path(user)
+    end
+
     it {should have_content('Edit your profile!')}
     it {should have_title('Edit')}
     it {should have_button('Save')}
 
-    describe "with valid information" do
+    describe "with valid information" do #ここがサインインを表現できてない
     	let(:new_name) {"New Name"}
     	let(:new_email){"new@example.com"}
     	before do
@@ -39,9 +43,10 @@ describe "User Pages" do
     	it {should have_title(new_name)}
     	it {should have_selector('div.alert.alert-success')}
     	it {should have_content('updated')}
-    	#it { should have_link('Sign out')}
+    	#it { should have_link('Sign out')} #なぜかリンク名'S'にすると通る
     	it {should have_link('Home', href: '/')}
     	it {should have_link('Help', '/help')}
+    	it {should have_link('Sign out')}
     	
     	specify {expect(user.reload.name).to  eq new_name }
     	specify {expect(user.reload.email).to eq new_email}
