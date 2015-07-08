@@ -1,9 +1,9 @@
 module SessionsHelper
 	def sign_in(user)
 		remember_token = User.new_remember_token
-		cookies.permanent[:remember_token] = remember_token
-		user.update_attribute(:remember_token, User.encrypt(remember_token))
-		self.current_user = user
+		cookies.permanent[:remember_token] = remember_token #cookieに記憶トークンを格納
+		user.update_attribute(:remember_token, User.encrypt(remember_token)) #Userモデルに記憶トークンを格納
+		self.current_user = user #current_user属性に
 	end
 
 	def signed_in?

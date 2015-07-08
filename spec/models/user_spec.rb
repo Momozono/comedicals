@@ -2,27 +2,21 @@ require 'spec_helper'
 
 describe User do
 
-  before {@user = User.new(name: "Example User", email: "foobar@gmail.com",
-  													password: "foobar", password_confirmation: "foobar")}
-
+  before do 
+  	@user = User.new(name: "Example User", email: "foobar@gmail.com",
+  	  password: "foobar", password_confirmation: "foobar")
+  end
   subject {@user}
   it {should respond_to(:name)}
   it {should respond_to(:email)}
-
   it {should respond_to(:password_digest)}
-
   it {should respond_to(:password)}
   it {should respond_to(:password_confirmation)}
   it {should respond_to(:authenticate)}
   it {should respond_to(:remember_token)}
 
-
-
   it {should be_valid}
 
-
-
-  #####name test#####
   describe "when name is blank" do
   	before {@user.name = " "}
   	it {should_not be_valid}
@@ -33,7 +27,6 @@ describe User do
     it {should_not be_valid}
   end
 
-  #####email test#####
   describe "when email is blank" do
   	before {@user.email = " "}
   	it {should_not be_valid}
@@ -46,7 +39,6 @@ describe User do
   	end
   	it {should_not be_valid}
   end
-
 
   describe "when email is invalid format" do
   	it "should be invalid" do
@@ -67,7 +59,7 @@ describe User do
   	  end
     end
   end
-  #####password test#####
+
   describe "when password is blank" do
   	before do
   	  @user = User.new(name: "Example User", email: "foobar@gmail.com",
@@ -81,7 +73,6 @@ describe User do
   	it {should_not be_valid}
   end
 
-
   describe "when password is to short" do
   	before {@user.password = @user.password_confirmation =  "a" * 5}
   	it {should be_invalid}
@@ -92,9 +83,6 @@ describe User do
   	it {should be_invalid}
   end
 
-
-
-
   describe "return value of authenticate method" do
   	before {@user.save}
   	let(:found_user) {User.find_by(email: @user.email)}
@@ -104,7 +92,7 @@ describe User do
   	end
 
   	describe "with invalid password" do 
-  		let(:user_for_invalid_password){ found_user.authenticate("invalid") }
+  		let(:user_for_invalid_password){found_user.authenticate("invalid")}
 
   		it {should_not eq user_for_invalid_password}
   		specify {expect(user_for_invalid_password).to be_false}
