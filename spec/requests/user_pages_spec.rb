@@ -30,7 +30,7 @@ describe "User Pages" do
     it {should have_title('Edit')}
     it {should have_button('Save')}
 
-    describe "with valid information" do #ここがサインインを表現できてない
+    describe "with valid information" do
     	let(:new_name) {"New Name"}
     	let(:new_email){"new@example.com"}
     	before do
