@@ -1,4 +1,4 @@
-/Users/Momozono/.rbenv/versions/2.0.0-p481/bin/ruby extconf.rb
+/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb
 checking for pg_config... no
 No pg_config... trying anyway. If building fails, please try again with
  --with-pg-config=/path/to/pg_config
@@ -20,7 +20,7 @@ Provided configuration options:
 	--without-make-prog
 	--srcdir=.
 	--curdir
-	--ruby=/Users/Momozono/.rbenv/versions/2.0.0-p481/bin/ruby
+	--ruby=/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby
 	--with-pg
 	--without-pg
 	--enable-windows-cross
