@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150707013933) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest", limit: 255
-    t.string   "remember_token",  limit: 255
+    t.string   "remember_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

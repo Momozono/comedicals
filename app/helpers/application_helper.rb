@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def generate_title(subtitle)
-		main_title = "Fragment"
+		main_title = "Comedicals"
 		if subtitle.empty?
 			full_title = "#{main_title}"
 		else
