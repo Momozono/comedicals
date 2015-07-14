@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707013933) do
+ActiveRecord::Schema.define(version: 20150714070325) do
+
+  create_table "professions", force: :cascade do |t|
+    t.string   "profession_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_professions", force: :cascade do |t|
+    t.integer  "user_id",       null: false
+    t.integer  "profession_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_professions", ["profession_id"], name: "index_user_professions_on_profession_id"
+  add_index "user_professions", ["user_id", "profession_id"], name: "index_user_professions_on_user_id_and_profession_id", unique: true
+  add_index "user_professions", ["user_id"], name: "index_user_professions_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 255
