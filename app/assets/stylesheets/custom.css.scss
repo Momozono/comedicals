@@ -1,12 +1,17 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Chango');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Fascinate');
+@import url('https://fonts.googleapis.com/css?family=Asul:400,700');
 
 html {
   overflow-y: scroll;
 }
 body {
-  padding-top: 200px;
-  font-family: 'Chango', cursive;
+  padding-top: 100px;
+  font-family: 'Asul', sans-serif;
+  font-weight: 400;
+  background-color: #ccccff;
 }
 .center {
   text-align: center;
@@ -28,29 +33,59 @@ p {
 	font-size: 1.5em;
 	text-align: center;
 }
+
+
+
 /* header */
 li {
 	font-size: 1.2em;
-	color: #00cc66;
+	color: #ff99cc;
 }
 #header{
-	color: #FFCC00;
+	color: #ff99cc;
 	font-size: 20px;
 }
+
 #header:hover {
 	color: #ddd;
 }
+/*
+.dropdown {
+  color: #FF99CC;
+}
+.dropdown:hover {
+  color: #FF99CC;
+}
+*/
+
+.dropdown-toggle {
+  color: #ff99cc;
+}
+#account {
+  color: #ff99cc;
+  font-size:20px;
+}
+#dropdown-color {
+  color: #ff99cc;
+
+}
+
+
+
+
+/* logo */
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 2.0em;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
-  font-family: 'Chango', cursive;
-  color: #FFCC00;
+  font-family: 'Asul', sans-serif;
+  font-weight: 700;
+  color: #ff99cc;
 }
 #logo:hover {
   color: #fff;
@@ -82,50 +117,13 @@ footer small {
   float: right;
 }
 
-/*
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}*/
-
-
-/* miscellaneous */
 
 .debug_dump {
   clear: both;
   float: right;
   width: 800px;
   margin-top: 45px;
-  /*@include box_sizing;*/
 }
-/*
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  padding: 100px;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-*/
-
-/*
-input {
-  height: auto !important;
-}*/
-/*
-#error_explanation{
-  color: red;
-}
-#error_list {
-	color: red;
-}
-*/
-/*
-.field_with_errors {
-  @extend .control-group;
-  @extend .error;
-}*/
 
 
 
