@@ -45,7 +45,7 @@ describe User do
       invalid_addresses = %w[user@foo,com user_at_foo.org example.user@foo foo@bar_baz.com foo@bar+baz.com]
       invalid_addresses.each do |invalid_address|
         @user.email = invalid_address
-        expect(@user).not_to be_valids
+        expect(@user).not_to be_valid
       end
     end
   end

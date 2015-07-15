@@ -16,6 +16,11 @@ gem 'sprockets'
 gem 'bcrypt-ruby'
 
 
+group :development do
+  gem 'guard-rubocop'
+end
+
+
 group :development, :test do
   gem 'sqlite3'
     gem 'test-unit'
