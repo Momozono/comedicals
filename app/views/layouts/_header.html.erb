@@ -1,33 +1,33 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-			<%= link_to "Comedicals", root_path, id: "logo" %>
-			<nav>
-				<ul class="nav navbar-nav pull-right" id="header">
-				  <li><%= link_to "Home", root_path, id: "header" %></li>
-				  <li><%= link_to "Help", help_path, id: "header" %></li>
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Comedicals", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav navbar-nav pull-right" id="header">
+          <li><%= link_to "Home", root_path, id: "header" %></li>
+          <li><%= link_to "Help", help_path, id: "header" %></li>
 
-				  <% if signed_in? %>
-				    <li><%= link_to "Users", '#', id: "header" %></li>
-				    <li id="fat-menu" class="dropdown">
-				    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="account">
-				    		Account <b class="caret"></b>
-				    	</a>
-				    	<ul class="dropdown-menu">
-				    		<li><%= link_to "Profile", current_user, id: "dropdown-color" %></li>
-				    		<li><%= link_to "Settings", edit_user_path(current_user), id: "dropdown-color" %></li>
-				    		<li class="divider"></li>
-				    		<li>
-				    			<%= link_to "Sign out", signout_path, method: "delete", id: "dropdown-color" %>
-				    		</li>
-				    	</ul>
-				    </li>
-				    <% else %>
-				      <li><%= link_to "Sign in", signin_path, id: "dropdown-color" %></li>
-				    <% end %>
+          <% if signed_in? %>
+            <li><%= link_to "Users", '#', id: "header" %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="account">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", current_user, id: "dropdown-color" %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user), id: "dropdown-color" %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete", id: "dropdown-color" %>
+                </li>
+              </ul>
+            </li>
+            <% else %>
+              <li><%= link_to "Sign in", signin_path, id: "dropdown-color" %></li>
+            <% end %>
 
-				</ul>
-			</nav>
-		</div>
-	</div>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>

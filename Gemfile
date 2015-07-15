@@ -17,16 +17,16 @@ gem 'bcrypt-ruby'
 
 
 group :development, :test do
-	gem 'sqlite3'
+  gem 'sqlite3'
     gem 'test-unit'
-	gem 'rspec-rails', '2.13.1'
-	gem 'guard', '2.6.1'
-	gem 'guard-rspec', '2.5.0'
+  gem 'rspec-rails', '2.13.1'
+  gem 'guard', '2.6.1'
+  gem 'guard-rspec', '2.5.0'
 end
 
 group :test do
-	gem 'capybara', '2.1.0'
-	gem 'factory_girl_rails'
+  gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails'
 end
 
 gem 'uglifier'

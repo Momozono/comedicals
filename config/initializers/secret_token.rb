@@ -11,14 +11,14 @@
 # if you're sharing your code publicly.
 
 def secure_token
-	token_file = Rails.root.join('.secret')
-	if File.exist?(token_file)
-		File.read(token_file).chomp
-	else
-		token = SecureRandom.hex(64)
-		File.write(token_file, token)
-		token
-	end
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    File.read(token_file).chomp
+  else
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
 end
 
 Fragment::Application.config.secret_key_base = 'c45afdf62c6f76698d449fad6d821b2cde69fa1f0f653de012018b6611f92db57a1bae58067c2f4a2245b4ee33b689caf4d58b6e0b7146bf8a7567ae6ce55436'

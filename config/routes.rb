@@ -3,13 +3,13 @@ Fragment::Application.routes.draw do
   root 'static_pages#home'
   match '/help',  to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
-  #match '/signin', to: 'static_pages#signin', via: 'get' 
+  #match '/signin', to: 'static_pages#signin', via: 'get'
 
   resources :users  #これでRESTfulアクション全て実装
-  resources :sessions, only: [:new, :create, :destroy] 
+  resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',   to: 'users#new', via: 'get'
-  
+
   match '/signin',   to: 'sessions#new',     via: 'get'
   match '/signout',  to: 'sessions#destroy', via: 'delete'
 
