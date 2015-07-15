@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     @microposts = @user.microposts.all
   end
 
+  def index
+    @users = User.all
+  end
+
+
   def new
     @user = User.new
   end

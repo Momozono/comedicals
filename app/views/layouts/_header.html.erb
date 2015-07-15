@@ -8,7 +8,7 @@
           <li><%= link_to "Help", help_path, id: "header" %></li>
 
           <% if signed_in? %>
-            <li><%= link_to "Users", '#', id: "header" %></li>
+            <li><%= link_to "Users", users_path, id: "header" %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="account">
                 Account <b class="caret"></b>
