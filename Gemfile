@@ -15,10 +15,11 @@ gem 'autoprefixer-rails'
 gem 'sprockets'
 gem 'bcrypt-ruby'
 
-
+=begin
 group :development do
   gem 'guard-rubocop'
 end
+=end
 
 
 group :development, :test do
