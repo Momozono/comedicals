@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, length: {minimum: 6, maximum: 20}
 
-  has_many :microposts
+  has_many :microposts, dependent: :destroy
   has_many :user_professions
   has_many :professions, through: :user_professions
 

@@ -43,7 +43,6 @@ describe "User Pages" do
         it {should have_title(new_name)}
         it {should have_selector('div.alert.alert-success')}
         it {should have_content('updated')}
-        #it { should have_link('Sign out')} #なぜかリンク名'S'にすると通る
         it {should have_link('Home', href: '/')}
         it {should have_link('Help', '/help')}
         it {should have_link('Sign out')}
