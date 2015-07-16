@@ -139,19 +139,6 @@ describe User do
           expect(Micropost.where(id: micropost.id)).to be_empty
         end
       end
-  
-
-
-
-
-
-
-
-
-
-
-
-
   end
 end
 

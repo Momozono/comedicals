@@ -1,4 +1,10 @@
-<ul>
-  <%= gravatar_for @user %>
-  <%= micropost.content %>
-</ul>
+<div class="row micropost">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <%= gravatar_for @user %>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <div class="left_balloon">
+      <%= micropost.content %>
+    </div>
+  </div>
+</div>
