@@ -1,5 +1,9 @@
 <% @users.each do |user| %>
   <ul>
-    <%= gravatar_for user %><%= user.name %>
+    <%= gravatar_for user %>
+    <%= link_to user.name, user %>
+    <% if current_user.admin? && !current_user?(user) %>
+      | <%= link_to "ByeBye...", user_path(user), method: :delete, data: { confirm: "You Sure?" } %>
+    <% end %>
   </ul>
 <% end %>
