@@ -7,13 +7,11 @@ class User < ActiveRecord::Base
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-
   validates :password, length: {minimum: 6, maximum: 20}
 
   has_many :microposts
   has_many :user_professions
-  has_many :professions, through: :userprofessions
-
+  has_many :professions, through: :user_professions
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
@@ -24,7 +22,6 @@ class User < ActiveRecord::Base
   end
 
   private
-
     def create_remember_token
       self.remember_token = User.encrypt(User.new_remember_token)
     end

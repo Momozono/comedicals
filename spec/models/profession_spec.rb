@@ -1,5 +1,9 @@
 require 'spec_helper'
+=begin
 
 describe Profession do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @profession = Profession.new()
+  end
 end
+=end
