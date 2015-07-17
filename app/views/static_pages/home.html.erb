@@ -1,24 +1,22 @@
 <% if signed_in? %>
   <div class="row">
-    <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <aside class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
       <section>
         <%= render 'shared/user_info' %>
       </section>
-      <section>
+      <section class="textbox_feed">
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
 
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <h3>Micropost Feed</h3>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <h3 class="timeline_title">Timeline</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 
 <% else %>
-
-<h1>Welcome To the Comedicals</h1>
-<p>SNS service for comedical workers.</p>
-<p id="button"><%= link_to "Sign Up", signup_path, class: "btn btn-large btn-default" %></p>
-
+  <h1>Welcome To the Comedicals</h1>
+  <p>SNS service for comedical workers.</p>
+  <p id="button"><%= link_to "Sign Up", signup_path, class: "btn btn-large btn-default" %></p>
 <% end %>

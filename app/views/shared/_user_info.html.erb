@@ -1,23 +1,27 @@
-<div class="row">
-  <a href="<%= user_path(current_user) %>">
-    <%= gravatar_for current_user %>
-  </a>
+ <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-    <%= current_user.name %>
-
-      <% @professions.each do |profession| %>
-      <%= image_tag("#{profession.profession_name}.png", size: "50x50", alt: "profession_icon") %>
-    <% end %>
+      <a href="<%= user_path(current_user) %>">
+        <%= gravatar_for current_user %>
+      </a>
     </div>
 
-  <h1>
-    <% current_user.name %>
-  </h1>
-  <span>
-    <%= link_to "View my Profile", user_path(current_user) %>
-  </span>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="user_info_name">
+          <% @professions.each do |profession| %>
+            <%= image_tag("#{profession.profession_name}.png", size: "35x35", alt: "profession_icon") %><%= current_user.name %>
+          <% end %>
+        </div>
 
-  <span>
-    <%= pluralize(current_user.microposts.count, "micropost") %>
-  </span>
+        <span>
+          <%= link_to "Profile", user_path(current_user) %>
+        </span>
+        <span>
+          <%= pluralize(current_user.microposts.count, "micropost") %> now.
+        </span>
+        <div class="profile_comment">
+          <p>片田舎で医師をしております。よろしくお願いします。千葉在住。</p>
+        </div>
+
+
+    </div>
 </div>

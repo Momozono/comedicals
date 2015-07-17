@@ -13,7 +13,7 @@ body {
   padding-top: 100px;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  background-color: #66CCCC;
+  background-color: #f1f1f1;
 }
 .center {
   text-align: center;
@@ -42,9 +42,10 @@ p {
 li {
   font-size: 1.2em;
   color: #66CCCC;
+  list-style: none;
 }
 #header{
-  color: #66CCCC;
+  color: #f1f1f1;
   font-size: 20px;
 }
 
@@ -61,14 +62,14 @@ li {
 */
 
 .dropdown-toggle {
-  color: #66CCCC;
+  color: #f1f1f1;
 }
 #account {
-  color: #66CCCC;
+  color: #f1f1f1;
   font-size:20px;
 }
 #dropdown-color {
-  color: #6699CC;
+  color: #f1f1f1;
 
 }
 
@@ -78,7 +79,23 @@ li {
   font-weight: 700;
 }
 
+.microposts_area{
+  margin-top: 30px;
+}
 
+
+.submit_button {
+  text-align: right;
+}
+.timeline_title {
+  font-family: 'Nunito', sans-serif;
+}
+.field {
+  margin-top: 50px;
+}
+.profile_comment {
+  font-size: 9px;
+}
 
 
 /* logo */
@@ -96,7 +113,7 @@ li {
   color: #66CCCC;
 }
 #logo:hover {
-  color: #fff;
+  color: #f1f1f1;
   text-decoration: none;
 }
 /*  button */
@@ -151,6 +168,16 @@ footer small {
 }
 .feed_content{
   color: black;
+}
+
+.user_info_name {
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.textbox_feed {
+  margin-top: 30px;
+
 }
 
 
