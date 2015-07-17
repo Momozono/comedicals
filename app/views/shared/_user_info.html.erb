@@ -1,17 +1,23 @@
-<a href="<%= user_path(current_user) %>">
-  <%= gravatar_for current_user %>
-</a>
-<% @professions.each do |profession| %>
-  <%= image_tag("#{profession.profession_name}.png", size: "50x50", alt: "profession_icon") %>
-<% end %>
+<div class="row">
+  <a href="<%= user_path(current_user) %>">
+    <%= gravatar_for current_user %>
+  </a>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <%= current_user.name %>
 
-<h1>
-  <% current_user.name %>
-</h1>
-<span>
-  <%= link_to "View my Profile", user_path(current_user) %>
-</span>
+      <% @professions.each do |profession| %>
+      <%= image_tag("#{profession.profession_name}.png", size: "50x50", alt: "profession_icon") %>
+    <% end %>
+    </div>
 
-<span>
-  <%= pluralize(current_user.microposts.count, "micropost") %>
-</span>
+  <h1>
+    <% current_user.name %>
+  </h1>
+  <span>
+    <%= link_to "View my Profile", user_path(current_user) %>
+  </span>
+
+  <span>
+    <%= pluralize(current_user.microposts.count, "micropost") %>
+  </span>
+</div>

@@ -13,10 +13,12 @@
       <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
     </div>
-
   </div>
+
 <% else %>
+
 <h1>Welcome To the Comedicals</h1>
 <p>SNS service for comedical workers.</p>
 <p id="button"><%= link_to "Sign Up", signup_path, class: "btn btn-large btn-default" %></p>
+
 <% end %>
