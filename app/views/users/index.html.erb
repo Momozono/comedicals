@@ -1,7 +1,15 @@
 <% @users.each do |user| %>
   <ul>
     <%= gravatar_for user %>
+
+    <% if user.professions.any? %>
+      <% user.professions.each do |profession| %>
+        <%= image_tag("#{profession.profession_name}.png", size: "50x50", alt: "profession_icon") %>
+      <% end %>
+    <% end %>
+
     <%= link_to user.name, user %>
+
     <% if current_user.admin? && !current_user?(user) %>
       | <%= link_to "ByeBye...", user_path(user), method: :delete, data: { confirm: "You Sure?" } %>
     <% end %>

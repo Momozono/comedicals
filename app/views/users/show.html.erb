@@ -1,7 +1,15 @@
 <% provide(:title, @user.name) %>
 <h1 class="topname">
   <%= gravatar_for @user %>
+
+  <% if @professions.any? %>
+    <% @professions.each do |profession| %>
+      <%= image_tag("#{profession.profession_name}.png", size: "50x50", alt: "profession_icon") %>
+    <% end %>
+  <% end %>
+
   <%= @user.name %>
+
 </h1>
   <% if @user.microposts.count != nil %>
       <% @microposts.each do |micropost| %>
