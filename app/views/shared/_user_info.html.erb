@@ -1,0 +1,17 @@
+<a href="<%= user_path(current_user) %>">
+  <%= gravatar_for current_user %>
+</a>
+<% @professions.each do |profession| %>
+  <%= image_tag("#{profession.profession_name}.png", size: "50x50", alt: "profession_icon") %>
+<% end %>
+
+<h1>
+  <% current_user.name %>
+</h1>
+<span>
+  <%= link_to "View my Profile", user_path(current_user) %>
+</span>
+
+<span>
+  <%= pluralize(current_user.microposts.count, "micropost") %>
+</span>

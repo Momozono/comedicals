@@ -1,6 +1,6 @@
 <% @users.each do |user| %>
   <ul>
-    <%= gravatar_for user %>
+    <%= link_to gravatar_for(user), user_path(user) %>
 
     <% if user.professions.any? %>
       <% user.professions.each do |profession| %>

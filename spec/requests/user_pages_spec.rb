@@ -13,10 +13,29 @@ describe "User Pages" do
     end
 
   describe "signup page" do #Sign inしてない時
-
       before  {visit signup_path}
       it {should have_content('Fragment')}
       it {should have_title(generate_title('Signup')) }
+
+       let(:submit) { "Create my account" }
+
+    describe "signup with invalid information" do
+      it "should be invalid" do
+        expect { click_button submit }.not_to change(User, :count)
+      end
+    end
+
+    describe "signup with valid information" do
+        before do
+            fill_in "Name",                  with: "Example Name"
+            fill_in "Email",                 with: "foobar@example.com"
+            fill_in "Password",              with: "foobar"
+            fill_in "Confirmation", with: "foobar"
+        end
+      it "should be valid" do
+        expect { click_button submit }.to change(User, :count)
+      end
+    end
   end
 
   describe "edit page" do
