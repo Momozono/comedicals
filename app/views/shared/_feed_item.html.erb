@@ -4,4 +4,7 @@
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
     <span class="feed_content"><%= feed_item.content %></span>
+    <% if current_user?(feed_item.user) %>
+      <%= link_to "delete", micropost_path(feed_item.user.micropost.id), method: :delete, data: {confirm: "You sure?"}, title: feed_item.content %>
+    <% end %>
 </li>
