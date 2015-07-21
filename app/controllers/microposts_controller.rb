@@ -7,7 +7,11 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to root_url
     else
-      render 'static_pages/home'
+      #@professions = current_user.professions
+      #@feed_items = current_user.feed
+      #render 'static_pages/home' #これだとエラーになる
+      flash[:error] = "Anything wrong!"
+      redirect_to root_url
     end
   end
 

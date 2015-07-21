@@ -146,7 +146,7 @@ describe User do
         end
         its(:feed) { should include(newer_micropost) }
         its(:feed) { should include(older_micropost) }
-        its(:dfeed) { should_not include(unfollowed_post) }
+        its(:feed) { should_not include(unfollowed_post) }
       end
 
 

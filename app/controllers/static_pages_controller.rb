@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
     if signed_in?
       @micropost = current_user.microposts.build
       @feed_items  = current_user.feed
-      @professions = current_user.professions
+      @professions = current_user.professions #if current_user.professions.any?
     end
   end
 

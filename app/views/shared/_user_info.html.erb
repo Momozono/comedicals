@@ -7,9 +7,11 @@
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="user_info_name">
+        <% if @professions.any? %> <%# if @professions.any?だとエラーになる %>
           <% @professions.each do |profession| %>
-            <%= image_tag("#{profession.profession_name}.png", size: "35x35", alt: "profession_icon") %><%= current_user.name %>
+            <%= image_tag("#{profession.profession_name}.png", size: "35x35", alt: "profession_icon") %><%#= current_user.name %>
           <% end %>
+        <% end %>
         </div>
 
         <span>
@@ -21,7 +23,5 @@
         <div class="profile_comment">
           <p>片田舎で医師をしております。よろしくお願いします。千葉在住。</p>
         </div>
-
-
     </div>
 </div>
