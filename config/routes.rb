@@ -13,10 +13,20 @@ Fragment::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :relationships, only: [:create, :destroy]
+
   match '/signup',   to: 'users#new', via: 'get'
 
   match '/signin',   to: 'sessions#new',     via: 'get'
   match '/signout',  to: 'sessions#destroy', via: 'delete'
+
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

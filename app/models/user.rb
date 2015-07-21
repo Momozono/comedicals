@@ -10,11 +10,30 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, maximum: 20}
 
   has_many :microposts, dependent: :destroy
+
   has_many :user_professions
   has_many :professions, through: :user_professions
 
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed #relationshipsテーブルのfollowedカラムから参照していると記載
+
+  has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
+
   def feed
     Micropost.where("user_id = ?", id)
+  end
+
+  def follow!(followed_user)
+    self.relationships.create!(followed_id: followed_user.id)
+  end
+
+  def unfollow!(followed_user)
+    self.relationships.find_by(followed_id: followed_user.id).destroy
+  end
+
+  def following?(followed_user)
+    self.relationships.find_by(followed_id: followed_user.id)
   end
 
   def User.new_remember_token
