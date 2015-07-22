@@ -14,6 +14,7 @@ gem 'autoprefixer-rails'
 
 gem 'sprockets'
 gem 'bcrypt-ruby'
+gem 'rails-erd'
 
 =begin
 group :development do
